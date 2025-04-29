@@ -45,4 +45,4 @@ declare namespace kakao.maps {
   }
 }
 
-export {};
+export type { Map } from 'kakao.maps';
