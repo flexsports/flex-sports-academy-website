@@ -1,24 +1,16 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type SocialLink = {
   name: string;
   url: string;
-  type: 'svg' | 'image';
-} & (
-  | {
-      type: 'svg';
-      icon: React.ReactNode;
-      bgColor: string;
-    }
-  | {
-      type: 'image';
-      icon: string;
-    }
-);
+  type: 'svg';
+  icon: React.ReactNode;
+  bgColor: string;
+  onClick?: () => void;
+};
 
 export default function MobileFloatingButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +19,34 @@ export default function MobileFloatingButton() {
     setIsOpen(!isOpen);
   };
 
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:010-7587-0804';
+  };
+
   const socialLinks: SocialLink[] = [
+    {
+      name: '연관홈페이지',
+      url: 'https://xn--vk1bm9gzwkpg26sptiewp.kr/',
+      type: 'svg',
+      icon: (
+        <svg className='w-6 h-6' fill='currentColor' viewBox='0 0 24 24'>
+          <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z' />
+        </svg>
+      ),
+      bgColor: 'bg-blue-600',
+    },
+    {
+      name: '전화상담',
+      url: '#',
+      type: 'svg',
+      icon: (
+        <svg className='w-6 h-6' fill='currentColor' viewBox='0 0 24 24'>
+          <path d='M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z' />
+        </svg>
+      ),
+      bgColor: 'bg-green-600',
+      onClick: handlePhoneClick,
+    },
     {
       name: 'YouTube',
       url: 'https://www.youtube.com/embed/d4xQ1X4GBsg',
@@ -39,23 +58,6 @@ export default function MobileFloatingButton() {
       ),
       bgColor: 'bg-red-600',
     },
-    {
-      name: '네이버 블로그',
-      url: 'https://blog.naver.com/sd_sports',
-      type: 'svg',
-      icon: (
-        <svg className='w-4 h-4' viewBox='0 0 24 24' fill='currentColor'>
-          <path d='M16.273 12.845L7.376 0H0v24h7.726V11.155L16.624 24H24V0h-7.727z' />
-        </svg>
-      ),
-      bgColor: 'bg-[#03C75A]',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/flex_seoulgm/',
-      type: 'image',
-      icon: '/image/icon/instagram.png',
-    },
   ];
 
   return (
@@ -66,31 +68,18 @@ export default function MobileFloatingButton() {
             {socialLinks.map((social, index) => (
               <motion.a
                 key={social.name}
-                href={social.url}
-                target='_blank'
+                href={social.onClick ? '#' : social.url}
+                onClick={social.onClick}
+                target={social.onClick ? '_self' : '_blank'}
                 rel='noopener noreferrer'
-                className={`w-10 h-10 flex items-center justify-center ${
-                  social.type === 'svg'
-                    ? `${social.bgColor} text-white rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.2)]`
-                    : ''
-                }`}
+                className={`w-10 h-10 flex items-center justify-center ${social.bgColor} text-white rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.2)]`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.2, delay: index * 0.1 }}
                 aria-label={social.name}
               >
-                {social.type === 'svg' ? (
-                  social.icon
-                ) : (
-                  <Image
-                    src={social.icon}
-                    alt={social.name}
-                    width={40}
-                    height={40}
-                    className='w-10 h-10'
-                  />
-                )}
+                {social.icon}
               </motion.a>
             ))}
           </div>

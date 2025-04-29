@@ -27,18 +27,6 @@ export default function Footer() {
               <p className='text-white font-medium'>02-898-0070 / 010-7587-0804</p>
             </div>
           </div>
-
-          {/* 고양교육원 */}
-          <div className='space-y-3'>
-            <h3 className='text-xl font-bold mb-4'>고양교육원(본점직영)</h3>
-            <div className='space-y-1 text-gray-300'>
-              <p>주소: 경기도 고양시 후곡로32</p>
-              <p>(후곡마을 4단지 아파트 상가B1)</p>
-              <p>사업자번호: 443-26-01434</p>
-              <p>대표자: 김현진</p>
-              <p className='text-white font-medium'>0507-1421-3660 / 010-3050-3660</p>
-            </div>
-          </div>
           {/* 수원교육원 */}
           <div className='space-y-3'>
             <h3 className='text-xl font-bold mb-4'>수원교육원(본점직영)</h3>
@@ -47,6 +35,17 @@ export default function Footer() {
               <p>사업자번호: 436-48-00725</p>
               <p>대표자: 김현진</p>
               <p className='text-white font-medium'>031-256-3751 / 010-7587-0804</p>
+            </div>
+          </div>
+          {/* 고양교육원 */}
+          <div className='space-y-3'>
+            <h3 className='text-xl font-bold mb-4'>일산교육원(본점직영)</h3>
+            <div className='space-y-1 text-gray-300'>
+              <p>주소: 경기도 고양시 후곡로32</p>
+              <p>(후곡마을 4단지 아파트 상가B1)</p>
+              <p>사업자번호: 443-26-01434</p>
+              <p>대표자: 김근우</p>
+              <p className='text-white font-medium'>0507-1421-3660 / 010-3050-3660</p>
             </div>
           </div>
         </div>

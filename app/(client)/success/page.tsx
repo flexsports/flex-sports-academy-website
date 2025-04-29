@@ -17,7 +17,7 @@ export default function Success() {
   return (
     <main className='max-w-[1200px] mx-auto pt-[60px] sm:pt-[80px] lg:pt-[95.5px] px-4 lg:px-0'>
       <div className='w-full mb-8 lg:mb-[60px]'>
-        <h2 className='text-xl lg:text-[28px] font-bold mb-2 lg:mb-3'>합격자명단</h2>
+        <h2 className='text-xl lg:text-[28px] font-bold mb-2 lg:mb-4'>합격자명단</h2>
         <hr className='border-t border-gray-400 mb-6 lg:mb-[40px]' />
       </div>
       <div className='flex flex-col gap-8 lg:gap-12 items-center'>

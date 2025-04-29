@@ -14,9 +14,15 @@ const slides = [
   },
   {
     id: 2,
-    src: '/image/main/main2.png',
+    src: '/image/main/main2.jpg',
     alt: 'Main Image 2',
     overlay: 'bg-black/30',
+  },
+  {
+    id: 3,
+    src: '/image/main/main3.jpg',
+    alt: 'Main Image 3',
+    overlay: 'bg-black/10',
   },
 ];
 
@@ -77,8 +83,7 @@ export default function Home() {
     }, 1000);
   };
 
-  const handlePhoneClick = () => {
-    const phoneNumber = '010-7587-0804';
+  const handlePhoneClick = (phoneNumber: string) => {
     if (typeof window !== 'undefined') {
       const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
@@ -120,7 +125,7 @@ export default function Home() {
         <div className='absolute inset-0 flex flex-col items-center justify-center z-10'>
           {/* 로고 */}
           <div className='flex flex-col items-center'>
-            <div className='w-[280px] sm:w-[350px] md:w-[450px]'>
+            <div className='w-[140px] sm:w-[170px] md:w-[230px]'>
               <Image
                 src='/image/logo/logo_center.svg'
                 alt='Flex Sports Academy Logo'
@@ -147,18 +152,40 @@ export default function Home() {
           </div>
 
           {/* 슬로건 */}
-          <div className='text-white text-xl sm:text-2xl mb-8 sm:mb-10 px-3 sm:px-4 text-center'>
+          <div className='text-white text-xl sm:text-2xl mb-8 sm:mb-20 px-3 sm:px-4 text-center'>
             체대입시 합격을 FLEX 하라!
           </div>
 
           {/* 연락처 */}
-          <div
-            className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
-            onClick={handlePhoneClick}
-          >
-            <div className='flex items-center justify-center gap-1.5 sm:gap-2'>
-              <div className='text-white text-lg sm:text-xl font-bold pt-1'>문의전화</div>
-              <div className='text-white text-xl sm:text-2xl font-bold'> 010-7587-0804</div>
+          <div className='flex flex-col lg:flex-row gap-6 sm:gap-3 lg:gap-4'>
+            <div
+              className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+              onClick={() => handlePhoneClick('02-898-0070')}
+            >
+              <div className='flex items-center justify-center gap-3 sm:gap-2'>
+                <div className='text-white text-base sm:text-xl font-bold'>
+                  서울광명교육원(본점)
+                </div>
+                <div className='text-white text-lg sm:text-2xl font-bold'>02-898-0070</div>
+              </div>
+            </div>
+            <div
+              className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+              onClick={() => handlePhoneClick('031-256-3751')}
+            >
+              <div className='flex items-center justify-center gap-3 sm:gap-2'>
+                <div className='text-white text-base sm:text-xl font-bold'>수원교육원(직영)</div>
+                <div className='text-white text-lg sm:text-2xl font-bold'>031-256-3751</div>
+              </div>
+            </div>
+            <div
+              className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+              onClick={() => handlePhoneClick('0507-1421-3660')}
+            >
+              <div className='flex items-center justify-center gap-3 sm:gap-2'>
+                <div className='text-white text-base sm:text-xl font-bold'>일산교육원(직영)</div>
+                <div className='text-white text-lg sm:text-2xl font-bold'>0507-1421-3660</div>
+              </div>
             </div>
           </div>
 

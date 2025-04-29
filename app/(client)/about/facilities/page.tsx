@@ -34,9 +34,9 @@ const facilityImages: Record<Location, FacilityImage[]> = {
 };
 
 const locationNames: Record<Location, string> = {
-  seoul: '서울광명본점',
-  suwon: '수원직영점',
-  ilsan: '일산직영점',
+  seoul: '서울광명교육원(본점)',
+  suwon: '수원교육원(직영)',
+  ilsan: '일산교육원(직영)',
 };
 
 export default function Facilities() {
@@ -49,7 +49,7 @@ export default function Facilities() {
       <AboutPath currentPage='시설' />
       <main className='max-w-[1200px] mx-auto pt-8 lg:pt-12 px-4 lg:px-0'>
         <div className='w-full mb-8 lg:mb-[60px]'>
-          <h2 className='text-xl lg:text-[28px] font-bold mb-2 lg:mb-3'>시설</h2>
+          <h2 className='text-xl lg:text-[28px] font-bold mb-2 lg:mb-4'>시설</h2>
           <hr className='border-t border-gray-400 mb-4 lg:mb-[24px]' />
 
           {/* 지점 선택 버튼 */}

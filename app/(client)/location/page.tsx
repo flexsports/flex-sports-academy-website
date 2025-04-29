@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { MdAccessTime, MdLocationOn, MdPhone } from 'react-icons/md';
 import { SiNaver } from 'react-icons/si';
 
@@ -22,6 +23,8 @@ interface BranchInfo {
     lng: number;
   };
   naverPlaceUrl: string;
+  instagramUrl: string;
+  blogUrl: string;
 }
 
 const locationData: Record<Location, BranchInfo> = {
@@ -42,6 +45,8 @@ const locationData: Record<Location, BranchInfo> = {
     },
     naverPlaceUrl:
       'https://map.naver.com/p/entry/place/36630921?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.8813522&lat=37.4622423&c=15.00,0,0,0,dh',
+    instagramUrl: 'https://www.instagram.com/flex_seoulgm/',
+    blogUrl: 'https://blog.naver.com/sd_sports',
   },
   suwon: {
     name: '수원직영점',
@@ -60,6 +65,8 @@ const locationData: Record<Location, BranchInfo> = {
     },
     naverPlaceUrl:
       'https://map.naver.com/p/entry/place/518465931?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0088520&lat=37.2864709&c=15.00,0,0,0,dh',
+    instagramUrl: 'https://www.instagram.com/flex_suwon/',
+    blogUrl: 'https://blog.naver.com/twin0926s',
   },
   ilsan: {
     name: '일산직영점',
@@ -78,13 +85,15 @@ const locationData: Record<Location, BranchInfo> = {
     },
     naverPlaceUrl:
       'https://map.naver.com/p/search/%ED%94%8C%EB%A0%89%EC%8A%A4%EC%B2%B4%EB%8C%80%EC%9E%85%EC%8B%9C%20%EA%B3%A0%EC%96%91/place/1406433522?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh',
+    instagramUrl: 'https://www.instagram.com/flex_ilsan/',
+    blogUrl: 'https://blog.naver.com/flex-ilsan',
   },
 };
 
 const locationNames: Record<Location, string> = {
-  seoul: '서울광명본점',
-  suwon: '수원직영점',
-  ilsan: '일산직영점',
+  seoul: '서울광명교육원(본점)',
+  suwon: '수원교육원(직영)',
+  ilsan: '일산교육원(직영)',
 };
 
 export default function Location() {
@@ -92,8 +101,8 @@ export default function Location() {
   const branchInfo = locationData[selectedLocation];
 
   return (
-    <main className='max-w-[1200px] mx-auto pt-[95.5px] px-4'>
-      <div className='w-full mb-[60px]'>
+    <main className='max-w-[1200px] mx-auto pt-[60px] sm:pt-[80px] lg:pt-[95.5px] px-4 lg:px-0'>
+      <div className='w-full mb-8 lg:mb-[60px]'>
         <h2 className='text-[28px] font-bold mb-3'>오시는길</h2>
         <hr className='border-t border-gray-400 mb-[24px]' />
 
@@ -162,16 +171,44 @@ export default function Location() {
               </div>
             </div>
 
-            {/* 네이버 플레이스 바로가기 */}
-            <div className='flex-grow flex items-start mt-5'>
+            {/* 네이버 플레이스, 인스타그램, 네이버블로그 링크 */}
+            <div className='flex-grow flex items-start mt-5 gap-3'>
               <a
                 href={branchInfo.naverPlaceUrl}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-3 bg-[#2DB400] text-white rounded-lg hover:bg-[#249c00] transition-colors text-[15px] sm:text-lg font-bold'
+                className='inline-flex items-center gap-2 px-6 sm:px-8 py-2.5 sm:py-2 bg-[#2DB400] text-white rounded-lg hover:bg-[#249c00] transition-colors text-[15px] sm:text-lg font-bold'
               >
                 <SiNaver className='text-lg sm:text-xl' />
-                <span>네이버 플레이스 바로가기</span>
+                <span>네이버플레이스</span>
+              </a>
+              <a
+                href={branchInfo.instagramUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:opacity-80 transition-opacity -mt-1.5 sm:-mt-2.5'
+              >
+                <Image
+                  src='/image/icon/instagram_icon.svg'
+                  alt='Instagram'
+                  width={52}
+                  height={52}
+                  className='sm:w-[64px] sm:h-[64px]'
+                />
+              </a>
+              <a
+                href={branchInfo.blogUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:opacity-80 transition-opacity -mt-1.25 sm:-mt-2'
+              >
+                <Image
+                  src='/image/icon/naverblog_icon.svg'
+                  alt='Naver Blog'
+                  width={52}
+                  height={52}
+                  className='sm:w-[64px] sm:h-[64px]'
+                />
               </a>
             </div>
           </div>
