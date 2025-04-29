@@ -25,29 +25,30 @@ interface GeocodeResult {
   y: string;
 }
 
+interface KakaoMapsService {
+  Geocoder: new () => {
+    addressSearch: (
+      address: string,
+      callback: (result: GeocodeResult[], status: string) => void
+    ) => void;
+  };
+  Status: {
+    OK: string;
+  };
+}
+
+interface KakaoMaps {
+  load: (callback: () => void) => void;
+  LatLng: new (lat: number, lng: number) => KakaoLatLng;
+  Map: new (container: HTMLElement, options: { center: KakaoLatLng; level: number }) => KakaoMap;
+  Marker: new (options: { position: KakaoLatLng }) => KakaoMarker;
+  services: KakaoMapsService;
+}
+
 declare global {
   interface Window {
     kakao: {
-      maps: {
-        load: (callback: () => void) => void;
-        LatLng: new (lat: number, lng: number) => KakaoLatLng;
-        Map: new (
-          container: HTMLElement,
-          options: { center: KakaoLatLng; level: number }
-        ) => KakaoMap;
-        Marker: new (options: { position: KakaoLatLng }) => KakaoMarker;
-        services: {
-          Geocoder: new () => {
-            addressSearch: (
-              address: string,
-              callback: (result: GeocodeResult[], status: string) => void
-            ) => void;
-          };
-          Status: {
-            OK: string;
-          };
-        };
-      };
+      maps: KakaoMaps;
     };
   }
 }
