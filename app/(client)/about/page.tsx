@@ -28,14 +28,14 @@ export default function About() {
           </div>
         </div>
 
-        <div className='flex justify-center w-full h-auto mb-[30px] md:mb-[60px] px-4 md:px-0'>
+        <div className='flex justify-center items-center w-full h-auto mb-[30px] md:mb-[60px] px-4 md:px-0'>
           <Image
             src='/image/about/about_img.png'
             alt='플렉스 체대입시 소개 이미지'
             width={800}
             height={400}
             priority
-            className='h-auto object-cover w-full'
+            className='h-auto object-cover w-[800px]'
           />
         </div>
       </main>
