@@ -62,7 +62,7 @@ export default function MobileFloatingButton() {
     <div className='fixed bottom-6 right-6 z-50'>
       <AnimatePresence>
         {isOpen && (
-          <div className='flex flex-col-reverse gap-3 mb-3'>
+          <div className='flex flex-col-reverse gap-3 mb-3 items-center'>
             {socialLinks.map((social, index) => (
               <motion.a
                 key={social.name}
