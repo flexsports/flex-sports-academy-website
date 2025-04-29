@@ -12,46 +12,6 @@ interface GeocodeResult {
   y: string;
 }
 
-interface KakaoMapsServices {
-  Geocoder: {
-    new (): {
-      addressSearch(
-        address: string,
-        callback: (result: GeocodeResult[], status: string) => void
-      ): void;
-    };
-  };
-  Status: {
-    OK: string;
-  };
-}
-
-interface KakaoMaps {
-  load: (callback: () => void) => void;
-  LatLng: new (lat: number, lng: number) => {
-    getLat(): number;
-    getLng(): number;
-  };
-  Map: new (
-    container: HTMLElement,
-    options: { center: { getLat(): number; getLng(): number }; level: number }
-  ) => {
-    setCenter(position: { getLat(): number; getLng(): number }): void;
-  };
-  Marker: new (options: { position: { getLat(): number; getLng(): number } }) => {
-    setMap(map: { setCenter(position: { getLat(): number; getLng(): number }): void } | null): void;
-  };
-  services: KakaoMapsServices;
-}
-
-declare global {
-  interface Window {
-    kakao: {
-      maps: KakaoMaps;
-    };
-  }
-}
-
 export default function KakaoMap({ address }: KakaoMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);

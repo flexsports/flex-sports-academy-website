@@ -6,6 +6,17 @@ declare global {
         LatLng: new (lat: number, lng: number) => kakao.maps.LatLng;
         Map: new (container: HTMLElement, options: kakao.maps.MapOptions) => kakao.maps.Map;
         Marker: new (options: { position: kakao.maps.LatLng }) => kakao.maps.Marker;
+        services: {
+          Geocoder: new () => {
+            addressSearch(
+              address: string,
+              callback: (result: { x: string; y: string }[], status: string) => void
+            ): void;
+          };
+          Status: {
+            OK: string;
+          };
+        };
       };
     };
   }
