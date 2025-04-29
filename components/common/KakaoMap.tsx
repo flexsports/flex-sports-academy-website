@@ -57,31 +57,31 @@ export default function KakaoMap({ address }: KakaoMapProps) {
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const [coordinates, setCoordinates] = useState<{ lat: number; lng: number } | null>(null);
 
-  const initializeKakaoMaps = () => {
-    window.kakao.maps.load(() => {
-      if (!window.kakao?.maps?.services?.Geocoder) {
-        console.error('Kakao Maps Services not loaded');
-        return;
-      }
-
-      const geocoder = new window.kakao.maps.services.Geocoder();
-
-      geocoder.addressSearch(address, (result: GeocodeResult[], status: string) => {
-        if (status === window.kakao.maps.services.Status.OK) {
-          const coords = {
-            lat: Number(result[0].y),
-            lng: Number(result[0].x),
-          };
-          setCoordinates(coords);
-        } else {
-          console.error('주소를 찾을 수 없습니다:', address);
-        }
-      });
-    });
-  };
-
   useEffect(() => {
     if (isScriptLoaded && window.kakao?.maps) {
+      const initializeKakaoMaps = () => {
+        window.kakao.maps.load(() => {
+          if (!window.kakao?.maps?.services?.Geocoder) {
+            console.error('Kakao Maps Services not loaded');
+            return;
+          }
+
+          const geocoder = new window.kakao.maps.services.Geocoder();
+
+          geocoder.addressSearch(address, (result: GeocodeResult[], status: string) => {
+            if (status === window.kakao.maps.services.Status.OK) {
+              const coords = {
+                lat: Number(result[0].y),
+                lng: Number(result[0].x),
+              };
+              setCoordinates(coords);
+            } else {
+              console.error('주소를 찾을 수 없습니다:', address);
+            }
+          });
+        });
+      };
+
       initializeKakaoMaps();
     }
   }, [address, isScriptLoaded]);
