@@ -125,7 +125,7 @@ export default function Home() {
         <div className='absolute inset-0 flex flex-col items-center justify-center z-10'>
           {/* 로고 */}
           <div className='flex flex-col items-center'>
-            <div className='w-[140px] sm:w-[170px] md:w-[230px]'>
+            <div className='w-[140px] sm:mt-10 md:mt-0 sm:w-[170px] md:w-[230px]'>
               <Image
                 src='/image/logo/logo_center.svg'
                 alt='Flex Sports Academy Logo'
