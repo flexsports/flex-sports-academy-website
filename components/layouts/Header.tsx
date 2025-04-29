@@ -68,7 +68,7 @@ export default function Header() {
         </div>
 
         {/* 데스크톱 네비게이션 */}
-        <nav className='hidden md:flex relative h-full'>
+        <nav className='hidden min-[1250px]:flex relative h-full'>
           <Link href='/' className={menuStyle}>
             홈
           </Link>
@@ -94,7 +94,7 @@ export default function Header() {
 
         {/* 햄버거 버튼 */}
         <button
-          className='md:hidden flex flex-col gap-1.5 p-2 z-50'
+          className='min-[1250px]:hidden flex flex-col gap-1.5 p-2 z-50'
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           <div
@@ -111,7 +111,7 @@ export default function Header() {
         {/* 모바일 메뉴 */}
         <div
           className={`fixed right-0 top-[95px] w-[280px] bg-white shadow-lg z-40 
-            transition-transform duration-300 md:hidden h-[calc(100vh-95px)]
+            transition-transform duration-300 min-[1250px]:hidden h-[calc(100vh-95px)]
             ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <nav className='flex flex-col py-2 border-t border-gray-100 h-full overflow-y-auto'>
@@ -185,7 +185,7 @@ export default function Header() {
         {/* 모바일 메뉴 배경 오버레이 */}
         {isMobileMenuOpen && (
           <div
-            className='fixed inset-0 bg-black/20 z-30 md:hidden'
+            className='fixed inset-0 bg-black/20 z-30 min-[1250px]:hidden'
             onClick={() => setIsMobileMenuOpen(false)}
           />
         )}
