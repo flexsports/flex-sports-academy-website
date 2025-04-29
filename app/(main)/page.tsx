@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import toast, { Toaster } from 'react-hot-toast';
 
 const slides = [
   {
@@ -76,8 +77,31 @@ export default function Home() {
     }, 1000);
   };
 
+  const handlePhoneClick = () => {
+    const phoneNumber = '010-7587-0804';
+    if (typeof window !== 'undefined') {
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        window.location.href = `tel:${phoneNumber}`;
+      } else {
+        toast.success('모바일에서 이용해주세요!', {
+          duration: 3000,
+          position: 'top-center',
+          style: {
+            background: '#ffffff',
+            fontWeight: 'bold',
+            borderRadius: '25px',
+            padding: '12px',
+          },
+        });
+      }
+    }
+  };
+
   return (
     <main className='overflow-x-hidden'>
+      <Toaster />
       {/* 첫 번째 섹션 - 전체 화면 높이 */}
       <section className='h-screen relative'>
         {/* 배경 이미지 */}
@@ -128,7 +152,10 @@ export default function Home() {
           </div>
 
           {/* 연락처 */}
-          <div className='bg-[#00ADEE] px-8 py-2 rounded-4xl'>
+          <div
+            className='bg-[#00ADEE] px-8 py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+            onClick={handlePhoneClick}
+          >
             <div className='flex items-center justify-center gap-2'>
               <div className='text-white text-xl font-bold pt-1'>문의전화</div>
               <div className='text-white text-2xl font-bold'> 010-7587-0804</div>
