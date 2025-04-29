@@ -23,26 +23,26 @@ declare global {
 }
 
 declare namespace kakao.maps {
-  export interface LatLng {
+  interface LatLng {
     getLat(): number;
     getLng(): number;
   }
 
-  export interface MapOptions {
+  interface MapOptions {
     center: LatLng;
     level: number;
   }
 
-  export interface Map {
+  interface Map {
     setCenter(position: LatLng): void;
     getLevel(): number;
     setLevel(level: number): void;
   }
 
-  export interface Marker {
+  interface Marker {
     setMap(map: Map | null): void;
     getPosition(): LatLng;
   }
 }
 
-export type { Map } from 'kakao.maps';
+export {};

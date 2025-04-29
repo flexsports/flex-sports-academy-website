@@ -1,3 +1,4 @@
+/// <reference types="@types/kakao.maps.d.ts" />
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -12,13 +13,8 @@ interface GeocodeResult {
   y: string;
 }
 
-interface KakaoLatLng {
-  getLat(): number;
-  getLng(): number;
-}
-
 interface KakaoMap {
-  setCenter(position: KakaoLatLng): void;
+  setCenter(position: any): void;
   getLevel(): number;
   setLevel(level: number): void;
 }
@@ -28,12 +24,9 @@ declare global {
     kakao: {
       maps: {
         load: (callback: () => void) => void;
-        LatLng: new (lat: number, lng: number) => KakaoLatLng;
-        Map: new (
-          container: HTMLElement,
-          options: { center: KakaoLatLng; level: number }
-        ) => KakaoMap;
-        Marker: new (options: { position: KakaoLatLng }) => {
+        LatLng: new (lat: number, lng: number) => any;
+        Map: new (container: HTMLElement, options: { center: any; level: number }) => KakaoMap;
+        Marker: new (options: { position: any }) => {
           setMap: (map: KakaoMap | null) => void;
         };
         services: {
@@ -118,7 +111,7 @@ export default function KakaoMap({ address }: KakaoMapProps) {
         setMapInstance(null);
       }
     };
-  }, [address]);
+  }, [address, mapInstance]);
 
   return (
     <>
