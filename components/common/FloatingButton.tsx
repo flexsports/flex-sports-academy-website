@@ -54,6 +54,17 @@ export default function FloatingButton() {
       bgColor: 'bg-blue-600',
     },
     {
+      name: '플랜피이',
+      url: 'https://plan.pe.kr',
+      type: 'svg',
+      icon: (
+        <svg className='w-6 h-6' fill='currentColor' viewBox='0 0 24 24'>
+          <path d='M7 4v16h3v-6h3.5c2.757 0 5-2.243 5-5s-2.243-5-5-5H7zm3 7V7h3.5c1.103 0 2 .897 2 2s-.897 2-2 2H10z' />
+        </svg>
+      ),
+      bgColor: 'bg-blue-600',
+    },
+    {
       name: '전화상담',
       url: '#',
       type: 'svg',

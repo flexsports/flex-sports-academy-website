@@ -8,7 +8,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const slides = [
   {
     id: 1,
-    src: '/image/main/main1.png',
+    src: '/image/main/main1.jpg',
     alt: 'Main Image 1',
     overlay: 'bg-black/20',
   },
@@ -16,12 +16,6 @@ const slides = [
     id: 2,
     src: '/image/main/main2.jpg',
     alt: 'Main Image 2',
-    overlay: 'bg-black/30',
-  },
-  {
-    id: 3,
-    src: '/image/main/main3.jpg',
-    alt: 'Main Image 3',
     overlay: 'bg-black/20',
   },
 ];
@@ -122,75 +116,78 @@ export default function Home() {
         ))}
 
         {/* 중앙 컨텐츠 */}
-        <div className='absolute inset-0 flex flex-col items-center justify-center z-10'>
-          {/* 로고 */}
-          <div className='flex flex-col items-center'>
-            <div className='w-[140px] sm:mt-10 md:mt-0 sm:w-[170px] md:w-[230px]'>
-              <Image
-                src='/image/logo/logo_center.svg'
-                alt='Flex Sports Academy Logo'
-                width={600}
-                height={261}
-                priority
-              />
-            </div>
-            <div className='text-white text-3xl sm:text-4xl md:text-5xl font-bold mt-2 sm:mt-3 mb-6 sm:mb-9 mr-4 sm:mr-6 tracking-tighter italic'>
-              플렉스체대입시
-            </div>
-          </div>
-
-          {/* 메뉴 버튼 */}
-          <div className='flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-5 px-3 sm:px-4'>
-            {['체대입시', '공무원체력', '사관학교'].map((text) => (
-              <div
-                key={text}
-                className='px-4 sm:px-6 py-1.5 sm:py-2 border-1 border-white/50 rounded-4xl text-white text-base sm:text-lg font-bold'
-              >
-                {text}
+        <div className='absolute inset-0 flex flex-col items-center z-10 sm:mb-30 mb-12'>
+          {/* 상단 컨텐츠 그룹 */}
+          <div className='flex-1 flex flex-col items-center justify-center translate-y-[10vh] sm:translate-y-0'>
+            {/* 로고 */}
+            <div className='flex flex-col items-center'>
+              <div className='w-[140px] sm:mt-10 md:mt-0 sm:w-[170px] md:w-[230px]'>
+                <Image
+                  src='/image/logo/logo_center.svg'
+                  alt='Flex Sports Academy Logo'
+                  width={600}
+                  height={261}
+                  priority
+                />
               </div>
-            ))}
-          </div>
+              <div className='text-white text-3xl sm:text-4xl md:text-5xl font-bold mt-2 sm:mt-3 mb-6 sm:mb-9 mr-4 sm:mr-6 tracking-tighter italic'>
+                플렉스체대입시
+              </div>
+            </div>
 
-          {/* 슬로건 */}
-          <div className='text-white text-xl sm:text-2xl mb-8 sm:mb-20 px-3 sm:px-4 text-center'>
-            체대입시 합격을 FLEX 하라!
-          </div>
-
-          {/* 연락처 */}
-          <div className='flex flex-col lg:flex-row gap-6 sm:gap-3 lg:gap-4'>
-            <div
-              className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
-              onClick={() => handlePhoneClick('02-898-0070')}
-            >
-              <div className='flex items-center justify-center gap-3 sm:gap-2'>
-                <div className='text-white text-base sm:text-xl font-bold'>
-                  서울광명교육원(본점)
+            {/* 메뉴 버튼 */}
+            <div className='flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-5 px-3 sm:px-4'>
+              {['체대입시', '공무원체력', '사관학교'].map((text) => (
+                <div
+                  key={text}
+                  className='px-4 sm:px-6 py-1.5 sm:py-2 border-1 border-white/50 rounded-4xl text-white text-base sm:text-lg font-bold'
+                >
+                  {text}
                 </div>
-                <div className='text-white text-lg sm:text-2xl font-bold'>02-898-0070</div>
-              </div>
+              ))}
             </div>
-            <div
-              className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
-              onClick={() => handlePhoneClick('031-256-3751')}
-            >
-              <div className='flex items-center justify-center gap-3 sm:gap-2'>
-                <div className='text-white text-base sm:text-xl font-bold'>수원교육원(직영)</div>
-                <div className='text-white text-lg sm:text-2xl font-bold'>031-256-3751</div>
-              </div>
+
+            {/* 슬로건 */}
+            <div className='text-white text-xl sm:text-2xl mb-8 sm:mb-20 px-3 sm:px-4 text-center'>
+              체대입시 합격을 FLEX 하라!
             </div>
-            <div
-              className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
-              onClick={() => handlePhoneClick('0507-1421-3660')}
-            >
-              <div className='flex items-center justify-center gap-3 sm:gap-2'>
-                <div className='text-white text-base sm:text-xl font-bold'>일산교육원(직영)</div>
-                <div className='text-white text-lg sm:text-2xl font-bold'>0507-1421-3660</div>
+
+            {/* 연락처 */}
+            <div className='flex flex-col lg:flex-row gap-4 sm:gap-3 lg:gap-4'>
+              <div
+                className='bg-[#00ADEE] px-4 sm:px-8 py-1 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+                onClick={() => handlePhoneClick('02-898-0070')}
+              >
+                <div className='flex items-center justify-center gap-2 sm:gap-2'>
+                  <div className='text-white text-sm sm:text-xl font-bold'>
+                    서울광명교육원(본점)
+                  </div>
+                  <div className='text-white text-base sm:text-2xl font-bold'>02-898-0070</div>
+                </div>
+              </div>
+              <div
+                className='bg-[#00ADEE] px-4 sm:px-8 py-1 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+                onClick={() => handlePhoneClick('031-256-3751')}
+              >
+                <div className='flex items-center justify-center gap-2 sm:gap-2'>
+                  <div className='text-white text-sm sm:text-xl font-bold'>수원교육원(직영)</div>
+                  <div className='text-white text-base sm:text-2xl font-bold'>031-256-3751</div>
+                </div>
+              </div>
+              <div
+                className='bg-[#00ADEE] px-4 sm:px-8 py-1 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+                onClick={() => handlePhoneClick('0507-1421-3660')}
+              >
+                <div className='flex items-center justify-center gap-2 sm:gap-2'>
+                  <div className='text-white text-sm sm:text-xl font-bold'>일산교육원(직영)</div>
+                  <div className='text-white text-base sm:text-2xl font-bold'>0507-1421-3660</div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* 캐러셀 인디케이터 */}
-          <div className='flex gap-3 mt-30'>
+          {/* 캐러셀 인디케이터 - 위치 고정 */}
+          <div className='mb-[10vh] flex gap-3'>
             {slides.map((_, index) => (
               <div
                 key={index}

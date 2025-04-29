@@ -10,9 +10,9 @@ const DIRECTOR_INFO = {
   leftDescription: [
     '- 경희대학교 체육대학원 석사과정',
     '- 경희대학교 체육학과 학사졸업',
-    '- (현) (주)플렉스스포츠 대표이사',
-    '- (현) (주)클릭애드 대표이사',
-    '- (현) (주)제우스스포츠 이사',
+    '- (주)플렉스스포츠 대표이사',
+    '- (주)클릭애드 대표이사',
+    '- (주)제우스스포츠 이사',
   ],
   rightDescription: [
     '- 체육대학 온라인 ai합격예측플랫폼_plan 운영자',
@@ -53,7 +53,7 @@ export default function Instructors() {
               <p className='text-gray-600 text-sm sm:text-base mb-4 lg:mb-6 ml-0.5'>
                 {DIRECTOR_INFO.position}
               </p>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4'>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4'>
                 <div className='space-y-2.5'>
                   {DIRECTOR_INFO.leftDescription.map((line, index) => (
                     <p

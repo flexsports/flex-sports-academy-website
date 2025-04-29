@@ -60,13 +60,14 @@ export default function Header() {
     <>
       <header className={`${headerStyle} h-[95px]`}>
         <div className='max-w-[1400px] h-[95px] mx-auto flex justify-between items-center px-4'>
-          <div className='w-[160px] cursor-pointer'>
+          <div className='min-[1250px]:w-[160px] w-[120px] cursor-pointer'>
             <Link href='/'>
               <Image
                 src='/image/logo/logo_black_black.svg'
                 alt='Logo'
                 width={115}
                 height={70}
+                className='min-[1250px]:w-[115px] w-[85px]'
                 priority
               />
             </Link>

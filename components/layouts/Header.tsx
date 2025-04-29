@@ -9,6 +9,17 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1250);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,12 +48,13 @@ export default function Header() {
   const headerStyle = `
     fixed top-0 left-0 w-full z-50 transition-all duration-300
     ${isScrolled ? 'bg-black/30' : ''}
+    min-[1250px]:bg-transparent min-[1250px]:hover:bg-black/30 bg-white
   `;
 
   const hamburgerLineStyle = `
     h-0.5 w-6 rounded-full transition-all duration-300
-    bg-white
-    ${isMobileMenuOpen ? 'bg-[#00ADEE]' : ''}
+    min-[1250px]:bg-white bg-black
+    ${isMobileMenuOpen ? 'bg-black' : ''}
   `;
 
   const aboutSubMenuItems = [
@@ -53,15 +65,16 @@ export default function Header() {
   ];
 
   return (
-    <header className={`${headerStyle} h-[95px]`}>
-      <div className='max-w-[1400px] h-[95px] mx-auto flex justify-between items-center px-4'>
-        <div className='w-[160px] cursor-pointer'>
+    <header className={`${headerStyle} min-[1250px]:h-[95px] h-[70px]`}>
+      <div className='max-w-[1400px] min-[1250px]:h-[95px] h-[70px] mx-auto flex justify-between items-center px-4'>
+        <div className='min-[1250px]:w-[160px] w-[120px] cursor-pointer'>
           <Link href='/'>
             <Image
-              src='/image/logo/logo_black_white.svg'
+              src={`/image/logo/${isMobile ? 'logo_black_black.svg' : 'logo_black_white.svg'}`}
               alt='Logo'
               width={115}
               height={70}
+              className='min-[1250px]:w-[115px] w-[75px]'
               priority
             />
           </Link>
@@ -110,8 +123,8 @@ export default function Header() {
 
         {/* 모바일 메뉴 */}
         <div
-          className={`fixed right-0 top-[95px] w-[280px] bg-white shadow-lg z-40 
-            transition-transform duration-300 min-[1250px]:hidden h-[calc(100vh-95px)]
+          className={`fixed right-0 min-[1250px]:top-[95px] top-[70px] w-[280px] bg-white shadow-lg z-40 
+            transition-transform duration-300 min-[1250px]:hidden min-[1250px]:h-[calc(100vh-95px)] h-[calc(100vh-70px)]
             ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <nav className='flex flex-col py-2 border-t border-gray-100 h-full overflow-y-auto'>
