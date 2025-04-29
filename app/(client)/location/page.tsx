@@ -91,10 +91,25 @@ const locationData: Record<Location, BranchInfo> = {
   },
 };
 
-const locationNames: Record<Location, string> = {
-  seoul: '서울광명교육원(본점)',
-  suwon: '수원교육원(직영)',
-  ilsan: '일산교육원(직영)',
+const locationNames: Record<Location, React.ReactNode> = {
+  seoul: (
+    <span className='flex flex-col sm:flex-row sm:gap-0'>
+      <span>서울광명교육원</span>
+      <span>(본점)</span>
+    </span>
+  ),
+  suwon: (
+    <span className='flex flex-col sm:flex-row sm:gap-0'>
+      <span>수원교육원</span>
+      <span>(직영)</span>
+    </span>
+  ),
+  ilsan: (
+    <span className='flex flex-col sm:flex-row sm:gap-0'>
+      <span>일산교육원</span>
+      <span>(직영)</span>
+    </span>
+  ),
 };
 
 export default function Location() {

@@ -31,35 +31,45 @@ export default function Instructors() {
   return (
     <>
       <AboutPath currentPage='강사진' />
-      <main className='max-w-[1200px] mx-auto pt-12 pb-20'>
+      <main className='max-w-[1200px] mx-auto pt-[60px] sm:pt-[80px] lg:pt-[95.5px] px-4 lg:px-0 pb-20'>
         <div className='w-full'>
           <h2 className='text-[28px] font-bold mb-3'>강사진</h2>
-          <hr className='border-t border-gray-400 mb-[40px]' />
+          <hr className='border-t border-gray-400 mb-[24px] sm:mb-[32px] lg:mb-[40px]' />
 
           {/* 대표이사 프로필 */}
-          <div className='bg-white rounded-lg shadow-md overflow-hidden flex flex-col lg:flex-row mb-12'>
-            <div className='relative w-full lg:w-[400px] h-[300px] lg:h-[500px]'>
+          <div className='bg-white rounded-lg shadow-md overflow-hidden flex flex-col lg:flex-row mb-8 sm:mb-10 lg:mb-12'>
+            <div className='relative w-full lg:w-[400px] h-[280px] sm:h-[320px] lg:h-[500px]'>
               <Image
                 src='/image/about/ceo.jpg'
                 alt='김현진 대표이사'
                 fill
-                className='object-cover'
+                className='object-contain bg-black'
               />
             </div>
-            <div className='flex-1 p-4 lg:p-8'>
-              <h3 className='text-xl lg:text-2xl font-bold mb-1'>{DIRECTOR_INFO.name}</h3>
-              <p className='text-gray-600 mb-4 lg:mb-6 ml-1'>{DIRECTOR_INFO.position}</p>
-              <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                <div className='space-y-2'>
+            <div className='flex-1 p-5 sm:p-6 lg:p-8'>
+              <h3 className='text-lg sm:text-xl lg:text-2xl font-bold mb-1'>
+                {DIRECTOR_INFO.name}
+              </h3>
+              <p className='text-gray-600 text-sm sm:text-base mb-4 lg:mb-6 ml-0.5'>
+                {DIRECTOR_INFO.position}
+              </p>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4'>
+                <div className='space-y-2.5'>
                   {DIRECTOR_INFO.leftDescription.map((line, index) => (
-                    <p key={index} className='text-gray-700 text-sm lg:text-base'>
+                    <p
+                      key={index}
+                      className='text-gray-700 text-[14px] sm:text-[15px] lg:text-base'
+                    >
                       {line}
                     </p>
                   ))}
                 </div>
-                <div className='space-y-2'>
+                <div className='space-y-2.5'>
                   {DIRECTOR_INFO.rightDescription.map((line, index) => (
-                    <p key={index} className='text-gray-700 text-sm lg:text-base'>
+                    <p
+                      key={index}
+                      className='text-gray-700 text-[14px] sm:text-[15px] lg:text-base'
+                    >
                       {line}
                     </p>
                   ))}
@@ -69,10 +79,10 @@ export default function Instructors() {
           </div>
 
           {/* 강사진 이미지 그리드 */}
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8'>
             {INSTRUCTOR_IMAGES.map((imageUrl, index) => (
               <div key={index} className='rounded-lg shadow-md overflow-hidden'>
-                <div className='relative w-full h-[250px] sm:h-[300px] lg:h-[400px]'>
+                <div className='relative w-full h-[280px] sm:h-[320px] lg:h-[400px]'>
                   <Image
                     src={imageUrl}
                     alt={`강사 프로필 ${index + 1}`}
