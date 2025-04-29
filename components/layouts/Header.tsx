@@ -46,14 +46,14 @@ export default function Header() {
   `;
 
   const headerStyle = `
-    fixed top-0 left-0 w-full z-50 transition-all duration-300
-    ${isScrolled ? 'bg-black/30' : ''}
-    min-[1250px]:bg-transparent min-[1250px]:hover:bg-black/30 bg-white
-  `;
+  fixed top-0 left-0 w-full z-50 transition-all duration-300
+  ${isMobile ? 'bg-white' : isScrolled ? 'bg-black/30' : 'bg-transparent'}
+`;
 
   const hamburgerLineStyle = `
     h-0.5 w-6 rounded-full transition-all duration-300
-    min-[1250px]:bg-white bg-black
+    min-[1250px]:${isScrolled ? 'bg-white' : 'bg-white'}
+    max-[1249px]:bg-black
     ${isMobileMenuOpen ? 'bg-black' : ''}
   `;
 
