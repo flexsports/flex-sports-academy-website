@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { MdAccessTime, MdLocationOn, MdPhone } from 'react-icons/md';
 import { SiNaver } from 'react-icons/si';
+import KakaoMap from '@/components/common/KakaoMap';
 
 type Location = 'seoul' | 'suwon' | 'ilsan';
 
@@ -30,7 +31,7 @@ interface BranchInfo {
 const locationData: Record<Location, BranchInfo> = {
   seoul: {
     name: '서울광명본점',
-    address: '경기도 광명시 하안로288번길 15 조일프라자 B3,B4(2개층)',
+    address: '경기 광명시 하안동 61-1',
     operatingHours: {
       isAllDay: true,
       hours: '매일 00:00 ~ 24:00',
@@ -40,8 +41,8 @@ const locationData: Record<Location, BranchInfo> = {
       mobile: '010-7587-0804',
     },
     mapPosition: {
-      lat: 37.123456,
-      lng: 126.123456,
+      lat: 37.462399,
+      lng: 126.881308,
     },
     naverPlaceUrl:
       'https://map.naver.com/p/entry/place/36630921?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.8813522&lat=37.4622423&c=15.00,0,0,0,dh',
@@ -50,7 +51,7 @@ const locationData: Record<Location, BranchInfo> = {
   },
   suwon: {
     name: '수원직영점',
-    address: '경기도 수원시 장안구 팔달로211 B1',
+    address: '경기 수원시 장안구 영화동 443-13',
     operatingHours: {
       isAllDay: true,
       hours: '매일 00:00 ~ 24:00',
@@ -70,7 +71,7 @@ const locationData: Record<Location, BranchInfo> = {
   },
   ilsan: {
     name: '일산직영점',
-    address: '경기도 고양시 후곡로32 (후곡마을 4단지 아파트 상가B1)',
+    address: '경기 고양시 일산서구 일산동 1066',
     operatingHours: {
       isAllDay: true,
       hours: '매일 10:00 ~ 24:00',
@@ -112,7 +113,7 @@ export default function Location() {
             <button
               key={location}
               onClick={() => setSelectedLocation(location)}
-              className={`px-4 sm:px-6 py-2 rounded-full text-sm font-bold transition-all cursor-pointer flex-1 sm:flex-none
+              className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex-1 sm:flex-none
                 ${
                   selectedLocation === location
                     ? 'bg-blue-600 text-white'
@@ -127,11 +128,8 @@ export default function Location() {
         {/* 지도와 정보 컨테이너 */}
         <div className='flex flex-col lg:flex-row gap-8'>
           {/* 지도 영역 */}
-          <div className='w-full lg:w-[640px] h-[400px] lg:h-[500px] bg-gray-200'>
-            {/* 카카오맵 추후 구현 예정 */}
-            <div className='w-full h-full flex items-center justify-center text-gray-500'>
-              카카오맵 영역
-            </div>
+          <div className='w-full lg:w-[640px] h-[400px] lg:h-[500px]'>
+            <KakaoMap address={branchInfo.address} />
           </div>
 
           {/* 지점 정보 */}

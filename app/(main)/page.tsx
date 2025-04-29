@@ -22,7 +22,7 @@ const slides = [
     id: 3,
     src: '/image/main/main3.jpg',
     alt: 'Main Image 3',
-    overlay: 'bg-black/10',
+    overlay: 'bg-black/20',
   },
 ];
 
