@@ -17,6 +17,10 @@ export default function Header() {
     return pathname === path || pathname.startsWith(`${path}/`);
   };
 
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   const getMenuStyle = (path: string) => `
     text-lg font-medium transition-colors duration-200
     ${isActive(path) ? 'text-[#00ADEE]' : 'text-black hover:text-[#00ADEE]'}
@@ -113,48 +117,68 @@ export default function Header() {
           {/* 모바일 메뉴 */}
           <div
             className={`fixed right-0 top-[95px] w-[280px] bg-white shadow-lg z-40 
-              transition-transform duration-300 md:hidden
+              transition-transform duration-300 md:hidden h-[calc(100vh-95px)]
               ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
           >
-            <nav className='flex flex-col py-2 border-t border-gray-100'>
-              <Link href='/' className={getMobileMenuStyle('/')}>
+            <nav className='flex flex-col py-2 border-t border-gray-100 h-full overflow-y-auto'>
+              <Link href='/' className={getMobileMenuStyle('/')} onClick={handleLinkClick}>
                 홈
               </Link>
-              <Link href='/about' className={getMobileMenuStyle('/about')}>
+              <Link
+                href='/about'
+                className={getMobileMenuStyle('/about')}
+                onClick={handleLinkClick}
+              >
                 학원소개
               </Link>
               {/* 모바일 학원소개 하위메뉴 */}
               <Link
-                href='/about/greeting'
+                href='/about'
                 className={`${getMobileMenuStyle('/about/greeting')} pl-12`}
+                onClick={handleLinkClick}
               >
-                인사말
+                - 인사말
               </Link>
               <Link
-                href='/about/faculty'
+                href='/about/instructors'
                 className={`${getMobileMenuStyle('/about/faculty')} pl-12`}
+                onClick={handleLinkClick}
               >
-                강사진
+                - 강사진
               </Link>
               <Link
                 href='/about/facilities'
                 className={`${getMobileMenuStyle('/about/facilities')} pl-12`}
+                onClick={handleLinkClick}
               >
-                시설
+                - 시설
               </Link>
               <Link
                 href='/about/partners'
                 className={`${getMobileMenuStyle('/about/partners')} pl-12`}
+                onClick={handleLinkClick}
               >
-                협력기관
+                - 협력기관
               </Link>
-              <Link href='/features' className={getMobileMenuStyle('/features')}>
+              <Link
+                href='/features'
+                className={getMobileMenuStyle('/features')}
+                onClick={handleLinkClick}
+              >
                 특장점
               </Link>
-              <Link href='/success' className={getMobileMenuStyle('/success')}>
+              <Link
+                href='/success'
+                className={getMobileMenuStyle('/success')}
+                onClick={handleLinkClick}
+              >
                 합격자명단
               </Link>
-              <Link href='/location' className={getMobileMenuStyle('/location')}>
+              <Link
+                href='/location'
+                className={getMobileMenuStyle('/location')}
+                onClick={handleLinkClick}
+              >
                 오시는길
               </Link>
             </nav>

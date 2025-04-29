@@ -110,10 +110,10 @@ export default function Header() {
         {/* 모바일 메뉴 */}
         <div
           className={`fixed right-0 top-[95px] w-[280px] bg-white shadow-lg z-40 
-            transition-transform duration-300 md:hidden
+            transition-transform duration-300 md:hidden h-[calc(100vh-95px)]
             ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
-          <nav className='flex flex-col py-2 border-t border-gray-100'>
+          <nav className='flex flex-col py-2 border-t border-gray-100 h-full overflow-y-auto'>
             <Link href='/' className={mobileMenuStyle}>
               홈
             </Link>
@@ -121,17 +121,17 @@ export default function Header() {
               학원소개
             </Link>
             {/* 모바일 학원소개 하위메뉴 */}
-            <Link href='/about/greeting' className={`${mobileMenuStyle} pl-12`}>
-              인사말
+            <Link href='/about/' className={`${mobileMenuStyle} pl-12`}>
+              - 인사말
             </Link>
-            <Link href='/about/faculty' className={`${mobileMenuStyle} pl-12`}>
-              강사진
+            <Link href='/about/instructors' className={`${mobileMenuStyle} pl-12`}>
+              - 강사진
             </Link>
             <Link href='/about/facilities' className={`${mobileMenuStyle} pl-12`}>
-              시설
+              - 시설
             </Link>
             <Link href='/about/partners' className={`${mobileMenuStyle} pl-12`}>
-              협력기관
+              - 협력기관
             </Link>
             <Link href='/features' className={mobileMenuStyle}>
               특장점

@@ -22,8 +22,8 @@ export default function Instructors() {
           <hr className='border-t border-gray-400 mb-[40px]' />
 
           {/* 대표이사 프로필 */}
-          <div className='bg-white rounded-lg shadow-md overflow-hidden flex mb-12'>
-            <div className='relative w-[400px] h-[500px]'>
+          <div className='bg-white rounded-lg shadow-md overflow-hidden flex flex-col lg:flex-row mb-12'>
+            <div className='relative w-full lg:w-[400px] h-[300px] lg:h-[500px]'>
               <Image
                 src='/images/instructors/director.jpg'
                 alt='대표이사 프로필'
@@ -31,12 +31,12 @@ export default function Instructors() {
                 className='object-cover'
               />
             </div>
-            <div className='flex-1 p-8'>
-              <h3 className='text-2xl font-bold mb-2'>{DIRECTOR_INFO.name}</h3>
-              <p className='text-gray-600 mb-6'>{DIRECTOR_INFO.position}</p>
-              <div className='space-y-3'>
+            <div className='flex-1 p-4 lg:p-8'>
+              <h3 className='text-xl lg:text-2xl font-bold mb-2'>{DIRECTOR_INFO.name}</h3>
+              <p className='text-gray-600 mb-4 lg:mb-6'>{DIRECTOR_INFO.position}</p>
+              <div className='space-y-2 lg:space-y-3'>
                 {DIRECTOR_INFO.description.map((line, index) => (
-                  <p key={index} className='text-gray-700'>
+                  <p key={index} className='text-gray-700 text-sm lg:text-base'>
                     {line}
                   </p>
                 ))}
@@ -45,10 +45,10 @@ export default function Instructors() {
           </div>
 
           {/* 강사진 이미지 그리드 */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-8'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8'>
             {INSTRUCTOR_IMAGES.map((imageUrl, index) => (
               <div key={index} className='rounded-lg shadow-md overflow-hidden'>
-                <div className='relative w-full h-[400px]'>
+                <div className='relative w-full h-[250px] sm:h-[300px] lg:h-[400px]'>
                   <Image
                     src={imageUrl}
                     alt={`강사 프로필 ${index + 1}`}

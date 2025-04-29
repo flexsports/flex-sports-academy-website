@@ -47,18 +47,18 @@ export default function Facilities() {
   return (
     <>
       <AboutPath currentPage='시설' />
-      <main className='max-w-[1200px] mx-auto pt-12'>
-        <div className='w-full mb-[60px]'>
-          <h2 className='text-[28px] font-bold mb-3'>시설</h2>
-          <hr className='border-t border-gray-400 mb-[24px]' />
+      <main className='max-w-[1200px] mx-auto pt-8 lg:pt-12 px-4 lg:px-0'>
+        <div className='w-full mb-8 lg:mb-[60px]'>
+          <h2 className='text-xl lg:text-[28px] font-bold mb-2 lg:mb-3'>시설</h2>
+          <hr className='border-t border-gray-400 mb-4 lg:mb-[24px]' />
 
           {/* 지점 선택 버튼 */}
-          <div className='flex flex-wrap gap-4 mb-8'>
+          <div className='flex flex-wrap gap-2 lg:gap-4 mb-6 lg:mb-8'>
             {(Object.keys(locationNames) as Location[]).map((location) => (
               <button
                 key={location}
                 onClick={() => setSelectedLocation(location)}
-                className={`px-6 py-2 rounded-full text-sm font-bold transition-all cursor-pointer
+                className={`px-4 lg:px-6 py-1.5 lg:py-2 rounded-full text-xs lg:text-sm font-bold transition-all cursor-pointer
                   ${
                     selectedLocation === location
                       ? 'bg-blue-600 text-white'
@@ -71,13 +71,16 @@ export default function Facilities() {
           </div>
 
           {/* 시설 이미지 그리드 */}
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6'>
             {facilityImages[selectedLocation].map((image, index) => (
               <div
                 key={index}
                 onClick={() => {
-                  setSelectedImageIndex(index);
-                  setShowCarousel(true);
+                  // 768px 이상의 화면에서만 캐러셀 활성화
+                  if (window.innerWidth >= 768) {
+                    setSelectedImageIndex(index);
+                    setShowCarousel(true);
+                  }
                 }}
                 className='relative aspect-[4/3] rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow cursor-pointer'
               >
@@ -86,7 +89,7 @@ export default function Facilities() {
                   alt={image.alt}
                   fill
                   className='object-cover'
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
                 />
               </div>
             ))}

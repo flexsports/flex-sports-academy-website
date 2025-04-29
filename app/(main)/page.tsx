@@ -120,7 +120,7 @@ export default function Home() {
         <div className='absolute inset-0 flex flex-col items-center justify-center z-10'>
           {/* 로고 */}
           <div className='flex flex-col items-center'>
-            <div className='w-[450px]'>
+            <div className='w-[280px] sm:w-[350px] md:w-[450px]'>
               <Image
                 src='/image/logo/logo_center.svg'
                 alt='Flex Sports Academy Logo'
@@ -129,17 +129,17 @@ export default function Home() {
                 priority
               />
             </div>
-            <div className='text-white text-5xl font-bold mt-3 mb-9 mr-6 tracking-tighter italic'>
+            <div className='text-white text-3xl sm:text-4xl md:text-5xl font-bold mt-2 sm:mt-3 mb-6 sm:mb-9 mr-4 sm:mr-6 tracking-tighter italic'>
               플렉스체대입시
             </div>
           </div>
 
           {/* 메뉴 버튼 */}
-          <div className='flex flex-wrap justify-center gap-3 mb-5 px-4'>
+          <div className='flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sm:mb-5 px-3 sm:px-4'>
             {['체대입시', '공무원체력', '사관학교'].map((text) => (
               <div
                 key={text}
-                className='px-6 py-2 border-1 border-white/50 rounded-4xl text-white text-lg font-bold'
+                className='px-4 sm:px-6 py-1.5 sm:py-2 border-1 border-white/50 rounded-4xl text-white text-base sm:text-lg font-bold'
               >
                 {text}
               </div>
@@ -147,18 +147,18 @@ export default function Home() {
           </div>
 
           {/* 슬로건 */}
-          <div className='text-white text-2xl mb-10 px-4 text-center'>
+          <div className='text-white text-xl sm:text-2xl mb-8 sm:mb-10 px-3 sm:px-4 text-center'>
             체대입시 합격을 FLEX 하라!
           </div>
 
           {/* 연락처 */}
           <div
-            className='bg-[#00ADEE] px-8 py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
+            className='bg-[#00ADEE] px-6 sm:px-8 py-1.5 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
             onClick={handlePhoneClick}
           >
-            <div className='flex items-center justify-center gap-2'>
-              <div className='text-white text-xl font-bold pt-1'>문의전화</div>
-              <div className='text-white text-2xl font-bold'> 010-7587-0804</div>
+            <div className='flex items-center justify-center gap-1.5 sm:gap-2'>
+              <div className='text-white text-lg sm:text-xl font-bold pt-1'>문의전화</div>
+              <div className='text-white text-xl sm:text-2xl font-bold'> 010-7587-0804</div>
             </div>
           </div>
 
@@ -177,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* 링크 박스 섹션 */}
-      <section className='relative -mt-[15vh] px-4 md:px-6'>
+      <section className='relative -mt-[10vh] sm:-mt-[15vh] px-3 sm:px-4 md:px-6'>
         <div className='max-w-[1400px] mx-auto'>
           <div className='grid grid-cols-2 lg:grid-cols-4 gap-0 xs:gap-2 sm:gap-4 md:gap-6 justify-items-center'>
             {linkBoxes.map((box) => (
@@ -201,15 +201,15 @@ export default function Home() {
                     <div className='absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-300 ease-in-out'></div>
                   </div>
                   {/* 텍스트 컨테이너 */}
-                  <div className='absolute top-4 sm:top-6 left-4 sm:left-6 z-10 p-2 sm:p-3'>
+                  <div className='absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6 z-10 p-2 sm:p-3'>
                     {/* 직선 디자인 */}
-                    <div className='w-5 sm:w-6 h-[3px] bg-white group-hover:bg-[#00ADEE] transition-all duration-300 ease-in-out mb-2'></div>
+                    <div className='w-4 sm:w-5 md:w-6 h-[2px] sm:h-[3px] bg-white group-hover:bg-[#00ADEE] transition-all duration-300 ease-in-out mb-1.5 sm:mb-2'></div>
                     {/* 한글 텍스트 */}
-                    <div className='text-white text-lg sm:text-xl md:text-2xl font-bold transition-colors duration-300 ease-in-out'>
+                    <div className='text-white text-base sm:text-lg md:text-2xl font-bold transition-colors duration-300 ease-in-out'>
                       {box.title}
                     </div>
                     {/* 영문 텍스트 */}
-                    <div className='text-white/80 text-sm sm:text-base md:text-sm pl-1 transition-colors duration-300 ease-in-out'>
+                    <div className='text-white/80 text-xs sm:text-sm md:text-base pl-0.5 sm:pl-1 transition-colors duration-300 ease-in-out'>
                       {box.subtitle}
                     </div>
                   </div>

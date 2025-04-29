@@ -1,6 +1,7 @@
 import ClientHeader from '@/components/layouts/ClientHeader';
 import Footer from '@/components/layouts/Footer';
 import FloatingButton from '@/components/common/FloatingButton';
+import MobileFloatingButton from '@/components/common/MobileFloatingButton';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +11,12 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
       <div className='mt-[10vh]'>
         <Footer />
       </div>
-      <FloatingButton />
+      <div className='hidden md:block'>
+        <FloatingButton />
+      </div>
+      <div className='block md:hidden'>
+        <MobileFloatingButton />
+      </div>
     </>
   );
 }

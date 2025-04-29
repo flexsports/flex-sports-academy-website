@@ -15,21 +15,24 @@ export default function Success() {
   ];
 
   return (
-    <main className='max-w-[1200px] mx-auto pt-[95.5px]'>
-      <div className='w-full mb-[60px]'>
-        <h2 className='text-[28px] font-bold mb-3'>합격현황</h2>
-        <hr className='border-t border-gray-400 mb-[40px]' />
+    <main className='max-w-[1200px] mx-auto pt-[60px] sm:pt-[80px] lg:pt-[95.5px] px-4 lg:px-0'>
+      <div className='w-full mb-8 lg:mb-[60px]'>
+        <h2 className='text-xl lg:text-[28px] font-bold mb-2 lg:mb-3'>합격자명단</h2>
+        <hr className='border-t border-gray-400 mb-6 lg:mb-[40px]' />
       </div>
-      <div className='flex flex-col gap-8 items-center'>
+      <div className='flex flex-col gap-8 lg:gap-12 items-center'>
         {successImages.map((image, index) => (
-          <div key={index} className='w-[900px] mb-20'>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={900}
-              height={600}
-              className='w-full h-auto'
-            />
+          <div key={index} className='w-full max-w-[900px] mb-8 lg:mb-20'>
+            <div className='relative w-full'>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={900}
+                height={600}
+                className='w-full h-auto object-contain'
+                priority={index <= 1} // 최근 2년도 합격현황 우선 로딩
+              />
+            </div>
           </div>
         ))}
       </div>
