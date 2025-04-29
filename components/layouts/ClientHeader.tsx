@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Home, Building2, Star, CheckCircle2, MapPin } from 'lucide-react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -122,13 +123,14 @@ export default function Header() {
           >
             <nav className='flex flex-col py-2 border-t border-gray-100 h-full overflow-y-auto'>
               <Link href='/' className={getMobileMenuStyle('/')} onClick={handleLinkClick}>
-                홈
+                <Home className='w-5 h-5 mr-2 mb-1 inline-block' />홈
               </Link>
               <Link
                 href='/about'
                 className={getMobileMenuStyle('/about')}
                 onClick={handleLinkClick}
               >
+                <Building2 className='w-5 h-5 mr-2 mb-1 inline-block' />
                 학원소개
               </Link>
               {/* 모바일 학원소개 하위메뉴 */}
@@ -165,6 +167,7 @@ export default function Header() {
                 className={getMobileMenuStyle('/features')}
                 onClick={handleLinkClick}
               >
+                <Star className='w-5 h-5 mr-2 mb-1 inline-block' />
                 특장점
               </Link>
               <Link
@@ -172,6 +175,7 @@ export default function Header() {
                 className={getMobileMenuStyle('/success')}
                 onClick={handleLinkClick}
               >
+                <CheckCircle2 className='w-5 h-5 mr-2 mb-1 inline-block' />
                 합격자명단
               </Link>
               <Link
@@ -179,6 +183,7 @@ export default function Header() {
                 className={getMobileMenuStyle('/location')}
                 onClick={handleLinkClick}
               >
+                <MapPin className='w-5 h-5 mr-2 mb-1 inline-block' />
                 오시는길
               </Link>
             </nav>

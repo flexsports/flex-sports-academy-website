@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Home, Building2, Star, CheckCircle2, MapPin } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,32 +115,68 @@ export default function Header() {
             ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         >
           <nav className='flex flex-col py-2 border-t border-gray-100 h-full overflow-y-auto'>
-            <Link href='/' className={mobileMenuStyle}>
-              홈
+            <Link href='/' className={mobileMenuStyle} onClick={() => setIsMobileMenuOpen(false)}>
+              <Home className='w-5 h-5 mr-2 mb-1 inline-block' />홈
             </Link>
-            <Link href='/about' className={mobileMenuStyle}>
+            <Link
+              href='/about'
+              className={mobileMenuStyle}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Building2 className='w-5 h-5 mr-2 mb-1 inline-block' />
               학원소개
             </Link>
             {/* 모바일 학원소개 하위메뉴 */}
-            <Link href='/about/' className={`${mobileMenuStyle} pl-12`}>
+            <Link
+              href='/about/'
+              className={`${mobileMenuStyle} pl-12`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               - 인사말
             </Link>
-            <Link href='/about/instructors' className={`${mobileMenuStyle} pl-12`}>
+            <Link
+              href='/about/instructors'
+              className={`${mobileMenuStyle} pl-12`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               - 강사진
             </Link>
-            <Link href='/about/facilities' className={`${mobileMenuStyle} pl-12`}>
+            <Link
+              href='/about/facilities'
+              className={`${mobileMenuStyle} pl-12`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               - 시설
             </Link>
-            <Link href='/about/partners' className={`${mobileMenuStyle} pl-12`}>
+            <Link
+              href='/about/partners'
+              className={`${mobileMenuStyle} pl-12`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
               - 협력기관
             </Link>
-            <Link href='/features' className={mobileMenuStyle}>
+            <Link
+              href='/features'
+              className={mobileMenuStyle}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <Star className='w-5 h-5 mr-2 mb-1 inline-block' />
               특장점
             </Link>
-            <Link href='/success' className={mobileMenuStyle}>
+            <Link
+              href='/success'
+              className={mobileMenuStyle}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <CheckCircle2 className='w-5 h-5 mr-2 mb-1 inline-block' />
               합격자명단
             </Link>
-            <Link href='/location' className={mobileMenuStyle}>
+            <Link
+              href='/location'
+              className={mobileMenuStyle}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <MapPin className='w-5 h-5 mr-2 mb-1 inline-block' />
               오시는길
             </Link>
           </nav>
