@@ -22,27 +22,27 @@ declare global {
   }
 }
 
-declare namespace kakao.maps {
-  interface LatLng {
-    getLat(): number;
-    getLng(): number;
-  }
+export declare namespace kakao {
+  namespace maps {
+    interface LatLng {
+      getLat(): number;
+      getLng(): number;
+    }
 
-  interface MapOptions {
-    center: LatLng;
-    level: number;
-  }
+    interface MapOptions {
+      center: LatLng;
+      level: number;
+    }
 
-  interface Map {
-    setCenter(position: LatLng): void;
-    getLevel(): number;
-    setLevel(level: number): void;
-  }
+    interface Map {
+      setCenter(position: LatLng): void;
+      getLevel(): number;
+      setLevel(level: number): void;
+    }
 
-  interface Marker {
-    setMap(map: Map | null): void;
-    getPosition(): LatLng;
+    interface Marker {
+      setMap(map: Map | null): void;
+      getPosition(): LatLng;
+    }
   }
 }
-
-export {};

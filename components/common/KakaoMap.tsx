@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Script from 'next/script';
+import type { kakao } from '../../types/kakao';
 
 interface KakaoMapProps {
   address: string;
@@ -12,53 +13,9 @@ interface GeocodeResult {
   y: string;
 }
 
-interface KakaoLatLng {
-  getLat(): number;
-  getLng(): number;
-}
-
-interface KakaoMap {
-  setCenter(position: KakaoLatLng): void;
-  getLevel(): number;
-  setLevel(level: number): void;
-}
-
-interface KakaoMapOptions {
-  center: KakaoLatLng;
-  level: number;
-}
-
-interface KakaoMapsService {
-  Geocoder: new () => {
-    addressSearch: (
-      address: string,
-      callback: (result: GeocodeResult[], status: string) => void
-    ) => void;
-  };
-  Status: {
-    OK: string;
-  };
-}
-
-declare global {
-  interface Window {
-    kakao: {
-      maps: {
-        load: (callback: () => void) => void;
-        LatLng: new (lat: number, lng: number) => KakaoLatLng;
-        Map: new (container: HTMLElement, options: KakaoMapOptions) => KakaoMap;
-        Marker: new (options: { position: KakaoLatLng }) => {
-          setMap: (map: KakaoMap | null) => void;
-        };
-        services: KakaoMapsService;
-      };
-    };
-  }
-}
-
 export default function KakaoMap({ address }: KakaoMapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
-  const [mapInstance, setMapInstance] = useState<KakaoMap | null>(null);
+  const [mapInstance, setMapInstance] = useState<kakao.maps.Map | null>(null);
 
   useEffect(() => {
     const initializeKakaoMap = () => {
@@ -80,7 +37,7 @@ export default function KakaoMap({ address }: KakaoMapProps) {
             };
 
             try {
-              const options = {
+              const options: kakao.maps.MapOptions = {
                 center: new window.kakao.maps.LatLng(coords.lat, coords.lng),
                 level: 3,
               };
