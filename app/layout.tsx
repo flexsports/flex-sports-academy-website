@@ -6,8 +6,12 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'FLEX Sports Academy',
-  description: 'FLEX Sports Academy - 체대입시의 모든 것',
+  title: '플렉스체대입시 본점',
+  description: '플렉스체대입시 - 체대입시의 모든 것',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -82,10 +82,10 @@ export default function Instructors() {
           </div>
 
           {/* 강사진 이미지 그리드 */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8'>
+          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-6 lg:gap-x-8 gap-y-4 sm:gap-y-6 lg:gap-y-8'>
             {INSTRUCTOR_IMAGES.map((imageUrl, index) => (
-              <div key={index} className='shadow-md overflow-hidden'>
-                <div className='relative w-full h-[355px] sm:h-[350px] lg:h-[450px]'>
+              <div key={index} className='overflow-hidden'>
+                <div className='relative w-full h-[355px] sm:h-[420px] lg:h-[348px]'>
                   <Image
                     src={imageUrl}
                     alt={`강사 프로필 ${index + 1}`}
