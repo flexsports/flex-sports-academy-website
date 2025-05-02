@@ -90,7 +90,7 @@ export default function Instructors() {
                     src={imageUrl}
                     alt={`강사 프로필 ${index + 1}`}
                     fill
-                    className='object-fill sm:object-fill lg:object-cover'
+                    className='object-fill sm:object-fill lg:object-cover bg-white'
                   />
                 </div>
               </div>
