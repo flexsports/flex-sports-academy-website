@@ -32,9 +32,9 @@ export default function Footer() {
             <h3 className='text-xl font-bold mb-4'>수원교육원(본점직영)</h3>
             <div className='space-y-1 text-gray-300'>
               <p>주소: 경기도 수원시 장안구 팔달로211 B1</p>
-              <p>사업자번호: 436-48-00725</p>
-              <p>대표자: 김현진</p>
-              <p className='text-white font-medium'>031-256-3751 / 010-7587-0804</p>
+              <p>사업자번호: 896-26-02092</p>
+              <p>대표자: 최병기</p>
+              <p className='text-white font-medium'>031-256-3751 / 010-8244-9746</p>
             </div>
           </div>
           {/* 고양교육원 */}
