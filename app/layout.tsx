@@ -7,8 +7,10 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: '플렉스체대입시 본점 | 체대입시 전문학원',
-  description: '체대입시의 모든 것! 체육대학 입시 전문 컨설팅, 실기 훈련, 면접 준비까지.',
-  keywords: '체대입시, 체육대학, 체대입시학원, 체육교육과, 체대실기, 체대면접',
+  description:
+    '체대입시의 모든 것! 체육대학 입시 전문 강사진 컨설팅, 실기 훈련, 개인별 맞춤 계획 수립까지.',
+  keywords:
+    '체대입시, 체육대학, 체대입시학원, 체육교육과, 체대실기, 체대면접, 공무원체력, 사관학교',
   openGraph: {
     title: '플렉스체대입시 본점 | 체대입시 전문학원',
     description: '체대입시의 모든 것! 체육대학 입시 전문 컨설팅',
@@ -20,7 +22,12 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.ico', sizes: '16x16' },
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.png', sizes: '192x192' },
+    ],
     shortcut: '/favicon.svg',
   },
 };

@@ -4,10 +4,16 @@
 # 모든 검색엔진 봇 허용 (네이버, 구글, 다음 등)
 User-agent: *
 Allow: /
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /favicon.png
 
 # 네이버봇 전용 설정
 User-agent: Yeti
 Allow: /
+Allow: /favicon.ico
+Allow: /favicon.svg
+Allow: /favicon.png
 Crawl-delay: 1
 
 # 구글봇 전용 설정  
