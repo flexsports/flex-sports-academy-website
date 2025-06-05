@@ -22,13 +22,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: '16x16' },
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.png', sizes: '192x192' },
-    ],
-    shortcut: '/favicon.svg',
+    shortcut: 'https://www.xn--vk1bm9gzwkpg26sptiewp.com/favicon.ico',
+    icon: 'https://www.xn--vk1bm9gzwkpg26sptiewp.com/favicon.ico',
+    apple: 'https://www.xn--vk1bm9gzwkpg26sptiewp.com/favicon.png',
   },
 };
 
