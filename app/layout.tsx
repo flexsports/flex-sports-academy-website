@@ -6,8 +6,20 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '플렉스체대입시 본점',
-  description: '플렉스체대입시 - 체대입시의 모든 것',
+  title: '플렉스체대입시 본점 | 체대입시 전문학원',
+  description:
+    '체대입시의 모든 것! 체육대학 입시 전문 컨설팅, 실기 훈련, 면접 준비까지. 서울대, 연세대, 고려대 체육교육과 합격 실적 보유.',
+  keywords: '체대입시, 체육대학, 체대입시학원, 체육교육과, 체대실기, 체대면접',
+  openGraph: {
+    title: '플렉스체대입시 본점 | 체대입시 전문학원',
+    description: '체대입시의 모든 것! 체육대학 입시 전문 컨설팅',
+    type: 'website',
+    locale: 'ko_KR',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -23,7 +35,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy='beforeInteractive'
         />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Script src='//wcs.naver.net/wcslog.js' strategy='afterInteractive' />
+        <Script id='naver-analytics' strategy='afterInteractive'>
+          {`
+            if(!wcs_add) var wcs_add = {};
+            wcs_add["wa"] = "12f4a57ca7819b0";
+            if(window.wcs) {
+              wcs_do();
+            }
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,34 @@
+# 플렉스체대입시 본점 - Robots.txt
+# 체대입시학원 웹사이트 검색엔진 최적화
+
+# 모든 검색엔진 봇 허용 (네이버, 구글, 다음 등)
+User-agent: *
+Allow: /
+
+# 네이버봇 전용 설정
+User-agent: Yeti
+Allow: /
+Crawl-delay: 1
+
+# 구글봇 전용 설정  
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# 다음 검색봇 설정
+User-agent: Daumoa
+Allow: /
+
+# 차단할 디렉토리 (관리자, 개인정보, API 등)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /*.json$
+
+# 중요: 사이트맵 위치 명시 (SEO 핵심)
+Sitemap: https://www.xn--vk1bm9gzwkpg26sptiewp.com/sitemap.xml
+Sitemap: https://www.xn--vk1bm9gzwkpg26sptiewp.com/sitemap-index.xml
+
+# 네이버 웹마스터 도구용 RSS 피드
+Sitemap: https://www.xn--vk1bm9gzwkpg26sptiewp.com/rss.xml 
