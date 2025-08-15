@@ -41,12 +41,12 @@ export default function Instructors() {
 
           {/* 대표이사 프로필 */}
           <div className='bg-white rounded-lg shadow-md overflow-hidden flex flex-col lg:flex-row mb-8 sm:mb-10 lg:mb-12'>
-            <div className='relative w-full lg:w-[400px] h-[350px] sm:h-[320px] lg:h-[500px]'>
+            <div className='relative w-full lg:w-[330px] h-[350px] sm:h-[320px] lg:h-[490px]'>
               <Image
                 src='/image/about/ceo.jpg'
                 alt='김현진 대표이사'
                 fill
-                className='object-contain bg-black'
+                className='object-cover sm:object-contain'
               />
             </div>
             <div className='flex-1 p-5 sm:p-6 lg:p-8'>
