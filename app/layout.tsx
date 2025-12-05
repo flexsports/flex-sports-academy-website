@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   icons: {
     shortcut: 'https://www.xn--vk1bm9gzwkpg26sptiewp.com/favicon.ico',
     icon: 'https://www.xn--vk1bm9gzwkpg26sptiewp.com/favicon.ico',
-    apple: 'https://www.xn--vk1bm9gzwkpg26sptiewp.com/favicon.png',
+    apple: 'https://www.xn--vk1bm9gzwkpg26sptiewp.com/favicon.ico',
   },
 };
 
