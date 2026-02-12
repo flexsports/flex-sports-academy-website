@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Home, Building2, Star, CheckCircle2, MapPin } from 'lucide-react';
+import { Home, Building2, Star, MapPin } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +20,7 @@ export default function Header() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -97,9 +97,9 @@ export default function Header() {
           <Link href='/features' className={menuStyle}>
             특장점
           </Link>
-          <Link href='/success' className={menuStyle}>
+{/* <Link href='/success' className={menuStyle}>
             합격자명단
-          </Link>
+          </Link> */}
           <Link href='/location' className={menuStyle}>
             오시는길
           </Link>
@@ -176,14 +176,14 @@ export default function Header() {
               <Star className='w-5 h-5 mr-2 mb-1 inline-block' />
               특장점
             </Link>
-            <Link
+{/* <Link
               href='/success'
               className={mobileMenuStyle}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               <CheckCircle2 className='w-5 h-5 mr-2 mb-1 inline-block' />
               합격자명단
-            </Link>
+            </Link> */}
             <Link
               href='/location'
               className={mobileMenuStyle}

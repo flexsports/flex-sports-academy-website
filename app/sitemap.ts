@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily',
       priority: 1.0,
     },
-    // 체대입시 정보 페이지들
+    // 학원소개
     {
       url: `${baseUrl}/about`,
       lastModified: currentDate,
@@ -22,47 +22,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/programs`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/admission-guide`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/success-stories`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
+      url: `${baseUrl}/about/instructors`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-    // 체대입시 관련 주요 키워드 페이지
     {
-      url: `${baseUrl}/sports-university-guide`,
+      url: `${baseUrl}/about/facilities`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
-      url: `${baseUrl}/physical-test-prep`,
+      url: `${baseUrl}/about/partners`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    // 특장점
+    {
+      url: `${baseUrl}/features`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    // 합격자명단 (임시 숨김)
+    // {
+    //   url: `${baseUrl}/success`,
+    //   lastModified: currentDate,
+    //   changeFrequency: 'weekly',
+    //   priority: 0.8,
+    // },
+    // 오시는길
     {
-      url: `${baseUrl}/interview-prep`,
+      url: `${baseUrl}/location`,
       lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
   ];
 }

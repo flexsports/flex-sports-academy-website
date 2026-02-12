@@ -51,7 +51,7 @@ export default function Footer() {
         </div>
 
         <div className='mt-10 pt-6 border-t border-gray-700 text-gray-400 text-sm text-center'>
-          © 2025 플렉스스포츠아카데미. All rights reserved.
+          © 2026 플렉스스포츠아카데미. All rights reserved.
         </div>
       </div>
     </footer>

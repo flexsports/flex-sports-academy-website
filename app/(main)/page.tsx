@@ -22,23 +22,29 @@ const slides = [
 
 const linkBoxes = [
   {
+    title: '홈',
+    subtitle: 'Home',
+    href: '/',
+    bgImage: '/image/linkbox/box_about.jpg',
+  },
+  {
     title: '학원소개',
     subtitle: 'About Us',
     href: '/about',
-    bgImage: '/image/linkbox/box_about.jpg',
+    bgImage: '/image/linkbox/box_features.jpg',
   },
   {
     title: '특장점',
     subtitle: 'Features',
     href: '/features',
-    bgImage: '/image/linkbox/box_features.jpg',
-  },
-  {
-    title: '합격자명단',
-    subtitle: 'Success Stories',
-    href: '/success',
     bgImage: '/image/linkbox/box_success.jpg',
   },
+  // {
+  //   title: '합격자명단',
+  //   subtitle: 'Success Stories',
+  //   href: '/success',
+  //   bgImage: '/image/linkbox/box_success.jpg',
+  // },
   {
     title: '오시는길',
     subtitle: 'Location',

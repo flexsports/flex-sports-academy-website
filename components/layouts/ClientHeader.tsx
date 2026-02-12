@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Building2, Star, CheckCircle2, MapPin } from 'lucide-react';
+import { Home, Building2, Star, MapPin } from 'lucide-react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -90,9 +90,9 @@ export default function Header() {
             <Link href='/features' className={getMenuStyle('/features')}>
               특장점
             </Link>
-            <Link href='/success' className={getMenuStyle('/success')}>
+{/* <Link href='/success' className={getMenuStyle('/success')}>
               합격자명단
-            </Link>
+            </Link> */}
             <Link href='/location' className={getMenuStyle('/location')}>
               오시는길
             </Link>
@@ -171,14 +171,14 @@ export default function Header() {
                 <Star className='w-5 h-5 mr-2 mb-1 inline-block' />
                 특장점
               </Link>
-              <Link
+{/* <Link
                 href='/success'
                 className={getMobileMenuStyle('/success')}
                 onClick={handleLinkClick}
               >
                 <CheckCircle2 className='w-5 h-5 mr-2 mb-1 inline-block' />
                 합격자명단
-              </Link>
+              </Link> */}
               <Link
                 href='/location'
                 className={getMobileMenuStyle('/location')}
