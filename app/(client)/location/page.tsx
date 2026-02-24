@@ -91,7 +91,7 @@ const locationData: Record<Location, BranchInfo> = {
   },
   namyang: {
     name: '남양주직영점',
-    address: '경기도 남양주시 불암로 291 1층',
+    address: '경기 남양주시 불암로 291 1층 플렉스체대입시 남양주교육원',
     operatingHours: {
       isAllDay: true,
       hours: '매일 00:00 ~ 24:00',
@@ -112,25 +112,25 @@ const locationData: Record<Location, BranchInfo> = {
 
 const locationNames: Record<Location, React.ReactNode> = {
   seoul: (
-    <span className='flex flex-col sm:flex-row sm:gap-0'>
+    <span className='flex flex-row items-center justify-center gap-1'>
       <span>서울광명교육원</span>
       <span>(본점)</span>
     </span>
   ),
   ilsan: (
-    <span className='flex flex-col sm:flex-row sm:gap-0'>
+    <span className='flex flex-row items-center justify-center gap-1'>
       <span>일산교육원</span>
       <span>(직영)</span>
     </span>
   ),
   suwon: (
-    <span className='flex flex-col sm:flex-row sm:gap-0'>
+    <span className='flex flex-row items-center justify-center gap-1'>
       <span>수원교육원</span>
       <span>(직영)</span>
     </span>
   ),
   namyang: (
-    <span className='flex flex-col sm:flex-row sm:gap-0'>
+    <span className='flex flex-row items-center justify-center gap-1'>
       <span>남양주교육원</span>
       <span>(직영)</span>
     </span>
@@ -148,15 +148,15 @@ export default function Location() {
         <hr className='border-t border-gray-400 mb-[24px]' />
 
         {/* 지점 선택 버튼 */}
-        <div className='flex flex-wrap gap-3 mb-8'>
+        <div className='grid grid-cols-2 sm:flex sm:flex-wrap gap-3 mb-8'>
           {(Object.keys(locationNames) as Location[]).map((location) => (
             <button
               key={location}
               onClick={() => setSelectedLocation(location)}
-              className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex-1 sm:flex-none
+              className={`px-4 sm:px-6 py-3 sm:py-2 rounded-xl sm:rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer flex items-center justify-center
                 ${
                   selectedLocation === location
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-blue-600 text-white shadow-md'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                 }`}
             >
