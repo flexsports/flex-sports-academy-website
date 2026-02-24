@@ -6,7 +6,7 @@ import { MdAccessTime, MdLocationOn, MdPhone } from 'react-icons/md';
 import { SiNaver } from 'react-icons/si';
 import KakaoMap from '@/components/common/KakaoMap';
 
-type Location = 'seoul' | 'suwon' | 'ilsan';
+type Location = 'seoul' | 'ilsan' | 'suwon' | 'namyang';
 
 interface BranchInfo {
   name: string;
@@ -49,26 +49,6 @@ const locationData: Record<Location, BranchInfo> = {
     instagramUrl: 'https://www.instagram.com/flex_seoulgm/',
     blogUrl: 'https://blog.naver.com/sd_sports',
   },
-  suwon: {
-    name: '수원직영점',
-    address: '경기 수원시 장안구 영화동 443-13',
-    operatingHours: {
-      isAllDay: true,
-      hours: '매일 00:00 ~ 24:00',
-    },
-    phone: {
-      landline: '031-256-3751',
-      mobile: '010-7587-0804',
-    },
-    mapPosition: {
-      lat: 37.234567,
-      lng: 126.234567,
-    },
-    naverPlaceUrl:
-      'https://map.naver.com/p/entry/place/518465931?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0088520&lat=37.2864709&c=15.00,0,0,0,dh',
-    instagramUrl: 'https://www.instagram.com/flex_suwon/',
-    blogUrl: 'https://blog.naver.com/twin0926s',
-  },
   ilsan: {
     name: '일산직영점',
     address: '경기 고양시 일산서구 일산동 1066',
@@ -89,6 +69,45 @@ const locationData: Record<Location, BranchInfo> = {
     instagramUrl: 'https://www.instagram.com/flex_ilsan/',
     blogUrl: 'https://blog.naver.com/flex-ilsan',
   },
+  suwon: {
+    name: '수원직영점',
+    address: '경기 수원시 장안구 영화동 443-13',
+    operatingHours: {
+      isAllDay: true,
+      hours: '매일 00:00 ~ 24:00',
+    },
+    phone: {
+      landline: '031-256-3751',
+      mobile: '010-7587-0804',
+    },
+    mapPosition: {
+      lat: 37.234567,
+      lng: 126.234567,
+    },
+    naverPlaceUrl:
+      'https://map.naver.com/p/entry/place/518465931?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0088520&lat=37.2864709&c=15.00,0,0,0,dh',
+    instagramUrl: 'https://www.instagram.com/flex_suwon/',
+    blogUrl: 'https://blog.naver.com/twin0926s',
+  },
+  namyang: {
+    name: '남양주직영점',
+    address: '경기도 남양주시 불암로 291 1층',
+    operatingHours: {
+      isAllDay: true,
+      hours: '매일 00:00 ~ 24:00',
+    },
+    phone: {
+      landline: '010-2066-9127',
+      mobile: '010-2066-9127',
+    },
+    mapPosition: {
+      lat: 37.643356, // 임시 좌표 (남양주 별내 인근)
+      lng: 127.108398,
+    },
+    naverPlaceUrl: 'https://map.naver.com/p/entry/place/1607850296',
+    instagramUrl: 'https://www.instagram.com/flex_namyangju',
+    blogUrl: 'https://blog.naver.com/flex_namyangju',
+  },
 };
 
 const locationNames: Record<Location, React.ReactNode> = {
@@ -98,15 +117,21 @@ const locationNames: Record<Location, React.ReactNode> = {
       <span>(본점)</span>
     </span>
   ),
+  ilsan: (
+    <span className='flex flex-col sm:flex-row sm:gap-0'>
+      <span>일산교육원</span>
+      <span>(직영)</span>
+    </span>
+  ),
   suwon: (
     <span className='flex flex-col sm:flex-row sm:gap-0'>
       <span>수원교육원</span>
       <span>(직영)</span>
     </span>
   ),
-  ilsan: (
+  namyang: (
     <span className='flex flex-col sm:flex-row sm:gap-0'>
-      <span>일산교육원</span>
+      <span>남양주교육원</span>
       <span>(직영)</span>
     </span>
   ),

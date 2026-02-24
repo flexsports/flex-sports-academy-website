@@ -5,7 +5,7 @@ import AboutPath from '@/components/common/AboutPath';
 import Image from 'next/image';
 import FacilityCarousel from '@/components/common/FacilityCarousel';
 
-type Location = 'seoul' | 'suwon' | 'ilsan';
+type Location = 'seoul' | 'ilsan' | 'suwon' | 'namyang';
 
 interface FacilityImage {
   src: string;
@@ -17,6 +17,10 @@ const facilityImages: Record<Location, FacilityImage[]> = {
     src: `/image/about/facilities/seoul/seoul${i + 1}.jpg`,
     alt: `서울광명본점 시설 이미지 ${i + 1}`,
   })),
+  ilsan: Array.from({ length: 7 }, (_, i) => ({
+    src: `/image/about/facilities/Ilsan/Ilsan${i + 1}.jpg`,
+    alt: `일산직영점 시설 이미지 ${i + 1}`,
+  })),
   suwon: [
     ...Array.from({ length: 3 }, (_, i) => ({
       src: `/image/about/facilities/suwon/suwon${i + 1}.png`,
@@ -27,16 +31,17 @@ const facilityImages: Record<Location, FacilityImage[]> = {
       alt: '수원직영점 시설 이미지 4',
     },
   ],
-  ilsan: Array.from({ length: 7 }, (_, i) => ({
-    src: `/image/about/facilities/Ilsan/Ilsan${i + 1}.jpg`,
-    alt: `일산직영점 시설 이미지 ${i + 1}`,
+  namyang: Array.from({ length: 8 }, (_, i) => ({
+    src: `/image/about/facilities/namyang/${i + 1}.jpg`,
+    alt: `남양주직영점 시설 이미지 ${i + 1}`,
   })),
 };
 
 const locationNames: Record<Location, string> = {
   seoul: '서울광명교육원(본점)',
-  suwon: '수원교육원(직영)',
   ilsan: '일산교육원(직영)',
+  suwon: '수원교육원(직영)',
+  namyang: '남양주교육원(직영)',
 };
 
 export default function Facilities() {

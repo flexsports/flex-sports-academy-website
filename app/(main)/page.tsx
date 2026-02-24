@@ -159,36 +159,28 @@ export default function Home() {
             </div>
 
             {/* 연락처 */}
-            <div className='flex flex-col lg:flex-row gap-4 sm:gap-3 lg:gap-4'>
-              <div
-                className='bg-[#00ADEE] px-4 sm:px-8 py-1 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
-                onClick={() => handlePhoneClick('02-898-0070')}
-              >
-                <div className='flex items-center justify-center gap-2 sm:gap-2'>
-                  <div className='text-white text-sm sm:text-xl font-bold'>
-                    서울광명교육원(본점)
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 max-w-7xl mx-auto'>
+              {[
+                { name: '서울광명교육원(본점)', phone: '02-898-0070' },
+                { name: '일산교육원(직영)', phone: '0507-1421-3660' },
+                { name: '수원교육원(직영)', phone: '031-256-3751' },
+                { name: '남양주교육원(직영)', phone: '010-2066-9127' },
+              ].map((branch) => (
+                <div
+                  key={branch.name}
+                  className='bg-[#00ADEE] w-[280px] sm:w-[360px] md:w-[380px] py-2 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300 mx-auto'
+                  onClick={() => handlePhoneClick(branch.phone)}
+                >
+                  <div className='flex items-center justify-center gap-2'>
+                    <div className='text-white text-xs sm:text-lg font-bold whitespace-nowrap'>
+                      {branch.name}
+                    </div>
+                    <div className='text-white text-sm sm:text-xl font-bold whitespace-nowrap'>
+                      {branch.phone}
+                    </div>
                   </div>
-                  <div className='text-white text-base sm:text-2xl font-bold'>02-898-0070</div>
                 </div>
-              </div>
-              <div
-                className='bg-[#00ADEE] px-4 sm:px-8 py-1 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
-                onClick={() => handlePhoneClick('031-256-3751')}
-              >
-                <div className='flex items-center justify-center gap-2 sm:gap-2'>
-                  <div className='text-white text-sm sm:text-xl font-bold'>수원교육원(직영)</div>
-                  <div className='text-white text-base sm:text-2xl font-bold'>031-256-3751</div>
-                </div>
-              </div>
-              <div
-                className='bg-[#00ADEE] px-4 sm:px-8 py-1 sm:py-2 rounded-4xl cursor-pointer hover:bg-[#0095CB] transition-colors duration-300'
-                onClick={() => handlePhoneClick('0507-1421-3660')}
-              >
-                <div className='flex items-center justify-center gap-2 sm:gap-2'>
-                  <div className='text-white text-sm sm:text-xl font-bold'>일산교육원(직영)</div>
-                  <div className='text-white text-base sm:text-2xl font-bold'>0507-1421-3660</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
