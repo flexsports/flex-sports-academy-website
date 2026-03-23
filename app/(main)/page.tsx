@@ -184,7 +184,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 캐러셀 인디케이터 - 위치 고정 */}
+          {/* 캐러셀 인디케이터 - 위치 고정  */}
           <div className='mb-[10vh] flex gap-3'>
             {slides.map((_, index) => (
               <div
