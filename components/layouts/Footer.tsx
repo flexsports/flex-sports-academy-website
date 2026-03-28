@@ -48,14 +48,14 @@ export default function Footer() {
               <p className='text-white font-medium'>031-256-3751 / 010-8244-9746</p>
             </div>
           </div>
-          {/* 남양주교육원 */}
+          {/* 구리남양주교육원 */}
           <div className='space-y-3'>
-            <h3 className='text-xl font-bold mb-4'>남양주교육원(본점직영)</h3>
+            <h3 className='text-xl font-bold mb-4'>구리남양주교육원(본점직영)</h3>
             <div className='space-y-1 text-gray-300'>
               <p>주소: 경기도 남양주시 불암로 291 1층 </p>
-              <p>사업자번호: (정보 준비중)</p>
-              <p>대표자: (정보 준비중)</p>
-              <p className='text-white font-medium'>010-2066-9127</p>
+              <p>사업자번호: 397-85-03290</p>
+              <p>대표자: 김현진</p>
+              <p className='text-white font-medium'>031-522-6846</p>
             </div>
           </div>
         </div>

@@ -90,14 +90,14 @@ const locationData: Record<Location, BranchInfo> = {
     blogUrl: 'https://blog.naver.com/twin0926s',
   },
   namyang: {
-    name: '남양주직영점',
-    address: '경기 남양주시 불암로 291 1층 플렉스체대입시 남양주교육원',
+    name: '구리남양주직영점',
+    address: '경기 남양주시 불암로 291 1층 플렉스체대입시 구리남양주교육원',
     operatingHours: {
       isAllDay: true,
       hours: '매일 00:00 ~ 24:00',
     },
     phone: {
-      landline: '010-2066-9127',
+      landline: '031-522-6846',
       mobile: '010-2066-9127',
     },
     mapPosition: {
@@ -131,7 +131,7 @@ const locationNames: Record<Location, React.ReactNode> = {
   ),
   namyang: (
     <span className='flex flex-row items-center justify-center gap-1'>
-      <span>남양주교육원</span>
+      <span>구리남양주교육원</span>
       <span>(직영)</span>
     </span>
   ),

@@ -41,7 +41,7 @@ const locationNames: Record<Location, string> = {
   seoul: '서울광명교육원(본점)',
   ilsan: '일산교육원(직영)',
   suwon: '수원교육원(직영)',
-  namyang: '남양주교육원(직영)',
+  namyang: '구리남양주교육원(직영)',
 };
 
 export default function Facilities() {

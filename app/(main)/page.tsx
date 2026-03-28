@@ -164,7 +164,7 @@ export default function Home() {
                 { name: '서울광명교육원(본점)', phone: '02-898-0070' },
                 { name: '일산교육원(직영)', phone: '0507-1421-3660' },
                 { name: '수원교육원(직영)', phone: '031-256-3751' },
-                { name: '남양주교육원(직영)', phone: '010-2066-9127' },
+                { name: '구리남양주교육원(직영)', phone: '031-522-6846' },
               ].map((branch) => (
                 <div
                   key={branch.name}
