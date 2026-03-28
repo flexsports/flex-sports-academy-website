@@ -55,7 +55,7 @@ export default function Footer() {
               <p>주소: 경기도 남양주시 불암로 291 1층 </p>
               <p>사업자번호: 397-85-03290</p>
               <p>대표자: 김현진</p>
-              <p className='text-white font-medium'>031-522-6846</p>
+              <p className='text-white font-medium'>031-522-6846 / 010-2066-9127</p>
             </div>
           </div>
         </div>
