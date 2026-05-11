@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import toast, { Toaster } from 'react-hot-toast';
+import PopupBanner from '@/components/common/PopupBanner';
 
 const slides = [
   {
@@ -106,6 +107,7 @@ export default function Home() {
 
   return (
     <main className='overflow-x-hidden'>
+      <PopupBanner />
       <Toaster />
       {/* 첫 번째 섹션 - 전체 화면 높이 */}
       <section className='h-screen relative'>
