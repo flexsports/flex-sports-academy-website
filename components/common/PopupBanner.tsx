@@ -72,7 +72,7 @@ export default function PopupBanner() {
             }}
           >
             <Image
-              src="/image/popup/popup1.png"
+              src="/image/popup/popup2.png"
               alt="팝업 배너"
               fill
               className="object-cover"
